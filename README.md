@@ -1,16 +1,21 @@
-# healthy_me
+# Healthy Me App
 
-A new Flutter project.
+Healthy Me app is an my first attempt to make a complete flutter app with rest api's integration along with beautiful UI. App has features like BMI Calculator, Calorie tracker, Maintenance calorie calculator, Diet plans.
 
-## Getting Started
 
-This project is a starting point for a Flutter application.
+## Features
+- BMI Calculator.
+- Calorie counter
+- Calorie tracker for various foods
+- Diet plans
+- Integrates with a REST API made in NodeJs and MongoDB
 
-A few resources to get you started if this is your first Flutter project:
+##  APP Link
+https://drive.google.com/file/d/1qbXixSOfPgE3KC81kY3uE26aOIDM_kOZ/view?usp=sharing
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
+##  Screen Shots
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+![image info](./screenshots/one.jpeg)
+![image info](./screenshots/two.jpeg)
+![image info](./screenshots/three.jpeg)
+![image info](./screenshots/four.jpeg)

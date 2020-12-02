@@ -14,10 +14,10 @@ class HealthyMe extends StatelessWidget {
       title: 'Healthy Me',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        
+        scaffoldBackgroundColor: Color(0xFF171624),
         brightness: Brightness.dark,
         primaryColor: Colors.tealAccent,
-        accentColor: Colors.cyan[600],
+        accentColor: Colors.tealAccent,
       ),
       initialRoute: '/',
       routes: {

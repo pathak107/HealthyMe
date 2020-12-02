@@ -4,7 +4,7 @@ import 'package:http/http.dart' as http;
 import 'dart:convert';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 
-const baseurl="https://shrouded-cove-63929.herokuapp.com";
+const baseurl = "https://healthy-me-sever.herokuapp.com";
 
 class BMIScreen extends StatefulWidget {
   @override
@@ -32,7 +32,9 @@ class _BMIScreenState extends State<BMIScreen> {
               fontSize: 15.0,
             ),
           ),
-          SizedBox(width: 5.0,),
+          SizedBox(
+            width: 5.0,
+          ),
           SpinKitWave(
             color: Colors.tealAccent,
             size: 15.0,
@@ -138,54 +140,56 @@ class _BMIScreenState extends State<BMIScreen> {
                 ),
                 OutlineButton(
                   highlightedBorderColor: Colors.tealAccent,
-                  onPressed: isButtonDiasbled? null: () async {
-                    var url = '$baseurl/api/weightLoss/BMI';
-                    try {
-                      setState(() {
-                        fetchingData = true;
-                        isButtonDiasbled=true;
-                      });
-                      var response = await http.get(url);
-                      setState(() {
-                        fetchingData = false;
-                        isButtonDiasbled =false;
-                      });
-                      print('Response status: ${response.statusCode}');
-                      if (response.statusCode == 200) {
-                        var plan = json.decode(response.body);
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                            builder: (context) => FactsScreen(
-                              title: plan['title'],
-                              description: plan['description'],
-                            ),
-                          ),
-                        );
-                      } else {
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                            builder: (context) => FactsScreen(
-                                title: 'Network Error',
-                                description:
-                                    "Please check your internet connection. If it still doesn't works then there's probably a problem with the server"),
-                          ),
-                        );
-                      }
-                    } catch (e) {
-                      print('Error $e');
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) => FactsScreen(
-                              title: 'Network Error',
-                              description:
-                                  "Please check your internet connection. If it still doesn't works then there's probably a problem with the server"),
-                        ),
-                      );
-                    }
-                  },
+                  onPressed: isButtonDiasbled
+                      ? null
+                      : () async {
+                          var url = '$baseurl/api/weightLoss/BMI';
+                          try {
+                            setState(() {
+                              fetchingData = true;
+                              isButtonDiasbled = true;
+                            });
+                            var response = await http.get(url);
+                            setState(() {
+                              fetchingData = false;
+                              isButtonDiasbled = false;
+                            });
+                            print('Response status: ${response.statusCode}');
+                            if (response.statusCode == 200) {
+                              var plan = json.decode(response.body);
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) => FactsScreen(
+                                    title: plan['title'],
+                                    description: plan['description'],
+                                  ),
+                                ),
+                              );
+                            } else {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) => FactsScreen(
+                                      title: 'Network Error',
+                                      description:
+                                          "Please check your internet connection. If it still doesn't works then there's probably a problem with the server"),
+                                ),
+                              );
+                            }
+                          } catch (e) {
+                            print('Error $e');
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => FactsScreen(
+                                    title: 'Network Error',
+                                    description:
+                                        "Please check your internet connection. If it still doesn't works then there's probably a problem with the server"),
+                              ),
+                            );
+                          }
+                        },
                   child: Text(
                     'What is BMI? How is this helpful?',
                     style: TextStyle(

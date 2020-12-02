@@ -34,8 +34,8 @@ class FactsScreen extends StatelessWidget {
                       '$description',
                       textAlign: TextAlign.justify,
                       style: TextStyle(
-                        fontSize: 20.0,
-                        letterSpacing: 1.0,
+                        fontSize: 15.0,
+                        letterSpacing: 0.5,
                         // fontWeight: FontWeight.bold,
                         // color: Colors.yellowAccent,
                         
